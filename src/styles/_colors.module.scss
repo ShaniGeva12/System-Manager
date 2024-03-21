@@ -1,0 +1,75 @@
+:root {
+
+    --background-hp-fill: #111013;
+    --background-hp-border: #030406;
+
+    --window-frame-bg: #11141F;
+    --winddow-frame-border: #252833;
+    --window-frame-bg-focus: #262934;
+    --winddow-frame-border-focus: #373A45;
+
+    --pop-up: #4e5467;
+
+    --lines: #616569;
+
+    --text-light-grey: #b9c0c8;
+    --text-blue: #8ab0ff;
+    --text-light-cream: #ffe9cf;
+    --text-grey: #7c7c7c;
+    --text-light: #fef4e6;
+
+    --status-orange: #fa8455;
+    --status-yellow: #ecc55e;
+    --status-light-green: #559663;
+    --status-green: #3a6248;
+    --status-live-green: #ccff00;
+    --status-blue: #4b83d7;
+    --status-red: #ff3c2f;
+    --status-light-red: #fb5d5d;
+    --status-grey: #6c6f7d;
+
+    --table-line-selected-focus: #3a445d;
+    --table-line-selected: #262932;
+
+    --scroll-standart: #464647;
+    --scroll-bottom: #56575c;
+    --scroll-hover: #7c7c7c;
+
+  }
+
+  $background-hp-fill: var(--background-hp-fill);
+  $background-hp-border: var(--background-hp-border);
+
+  $window-frame-bg: var(--window-frame-bg);
+  $winddow-frame-border: var(--winddow-frame-border);
+  $window-frame-bg-focus: var(--window-frame-bg-focus);
+  $winddow-frame-border-focus: var(--winddow-frame-border-focus);
+
+  $pop-up: var(--pop-up);
+
+  $lines: var(--lines);
+
+  $text-light-grey: var(--text-light-grey);
+  $text-blue: var(--text-bluex);
+  $text-light-cream: var(--text-light-cream);
+  $text-grey: var(--text-grey);
+  $text-light: var(--text-light);
+
+  $status-orange: var(--status-orangex);
+  $status-yellow: var(--status-yellow);
+  $status-light-green: var(--status-light-green);
+  $status-green: var(--status-green);
+  $status-live-green: var(--status-live-green);
+  $status-blue: var(--status-blue);
+  $status-red: var(--status-red);
+  $status-light-red: var(--status-light-red);
+  $status-grey: var(--status-grey);
+
+  $table-line-selected-focus: var(--table-line-selected-focus);
+  $table-line-selected: var(--table-line-selected);
+  
+  $scroll-standart: var(--scroll-standart);
+  $scroll-bottom: var(--scroll-bottom);
+  $scroll-hover: var(--scroll-hover);
+
+  // $x: var(--x);
