@@ -13,6 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
+import PublicIcon from '@mui/icons-material/Public';
+import textStyles from '../styles/text.module.scss'; 
+import headerStyles from '../styles/header.module.scss';
+
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -36,26 +40,16 @@ function AppHeader() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={headerStyles.header}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
+          
+          <PublicIcon className={textStyles.appTitle} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Typography className={textStyles.appTitle}
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
           >
-            LOGO
+            ראשי
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -94,6 +88,7 @@ function AppHeader() {
               ))}
             </Menu>
           </Box>
+
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -113,6 +108,7 @@ function AppHeader() {
           >
             LOGO
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -154,6 +150,7 @@ function AppHeader() {
               ))}
             </Menu>
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
