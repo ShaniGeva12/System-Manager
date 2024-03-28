@@ -11,13 +11,14 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
 import PublicIcon from '@mui/icons-material/Public';
 import textStyles from '../styles/text.module.scss'; 
 import headerStyles from '../styles/header.module.scss';
+import DevStateToggle from './devStateToggle';
+import { headerMenuBtns } from '../assets/mock/header-menu-buttons';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const menuItems = headerMenuBtns;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function AppHeader() {
@@ -43,13 +44,13 @@ function AppHeader() {
     <AppBar position="static" className={headerStyles.header}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          
+
           <PublicIcon className={textStyles.appTitle} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography className={textStyles.appTitle}
+          <Typography className={textStyles.appTitle} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
             variant="h6"
             noWrap
           >
-            ראשי
+            מערכת
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -81,15 +82,15 @@ function AppHeader() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {menuItems.map((item) => (
+                <MenuItem key={item.displayName} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{item.displayName}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <PublicIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -106,17 +107,17 @@ function AppHeader() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            מערכת
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {menuItems.map((item) => (
               <Button
-                key={page}
+                key={item.displayName}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {item.displayName}
               </Button>
             ))}
           </Box>
@@ -151,6 +152,7 @@ function AppHeader() {
             </Menu>
           </Box>
 
+          <DevStateToggle/>
         </Toolbar>
       </Container>
     </AppBar>
