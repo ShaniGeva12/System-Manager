@@ -7,12 +7,13 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 import PublicIcon from '@mui/icons-material/Public';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import textStyles from '../styles/text.module.scss'; 
 import headerStyles from '../styles/header.module.scss';
 import DevStateToggle from './devStateToggle';
@@ -28,9 +29,9 @@ function AppHeader() {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -123,11 +124,15 @@ function AppHeader() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
+            {/* <Tooltip title="Open settings"> */}
+              {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} color="inherit"> */}
+              <Box sx={{ p: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }} color="inherit">
+                <AccountCircleIcon/>
+                <Typography >
+                  שם משתמש
+                </Typography>
+              </Box>
+            {/* </Tooltip> */}
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
