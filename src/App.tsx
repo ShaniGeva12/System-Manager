@@ -3,29 +3,38 @@ import './App.css'
 import AppHeader from './components/header';
 import { darkTheme, lightTheme } from './styles/material/theme';
 import { MuiThemeProvider } from './contexts/theme';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LanguageOptions, LanguageProvider } from './contexts/language';
 
 function App() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const {t} = useTranslation();
+  const { i18n } = useTranslation();
   
   const [themeMode, setThemeMode] = useState(lightTheme);
+  const [language, setLanguage] = useState(LanguageOptions.Hebrew);
 
   const toggleTheme = () => {
     const isLight = themeMode === lightTheme;
     setThemeMode(isLight? darkTheme : lightTheme);
   };
 
+  const changeLanguage = (lan: LanguageOptions) => {
+    setLanguage(lan);
+    i18n.changeLanguage(lan);
+  };
+
   return (
     <>
-    <MuiThemeProvider value={{themeMode, toggleTheme}}>
-      <ThemeProvider theme={themeMode}>
-        <CssBaseline />
-        <AppHeader/>
-      </ThemeProvider>
-    </MuiThemeProvider>
-
+      <Suspense fallback='Loading...'>
+        <LanguageProvider value={{language, changeLanguage}}>
+          <MuiThemeProvider value={{themeMode, toggleTheme}}>
+            <ThemeProvider theme={themeMode}>
+              <CssBaseline />
+              <AppHeader/>
+            </ThemeProvider>
+          </MuiThemeProvider>
+        </LanguageProvider>
+      </Suspense>
     </>
   )
 }

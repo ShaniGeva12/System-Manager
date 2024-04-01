@@ -1,3 +1,13 @@
 {
-    "userName": "שם משתמש"
+    "appName": "מערכת",
+    "userName": "שם משתמש",
+    "menuButton.first": "כפתור 1",
+    "menuButton.second": "כפתור 2",
+    "menuButton.third": "כפתור 3",
+    "menuButton.fourth": "כפתור 4",
+    "menuButton.fifth": "כפתור 5",
+    "menuButton.sixth": "כפתור 6",
+    "subMenuButton.first.a": "תת-כפתור 1",
+    "subMenuButton.first.b": "תת-כפתור 2",
+    "subMenuButton.second.a": "תת-כפתור 01"
 }

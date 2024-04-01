@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
+
 import Button from '@mui/material/Button';
 // import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -19,10 +19,14 @@ import headerStyles from '../styles/header.module.scss';
 import DevStateToggle from './devStateToggle';
 import { headerMenuBtns } from '../assets/mock/header-menu-buttons';
 
+import { useTranslation } from 'react-i18next';
+
 const menuItems = headerMenuBtns;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function AppHeader() {
+  const {t} = useTranslation();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -51,7 +55,7 @@ function AppHeader() {
             variant="h6"
             noWrap
           >
-            מערכת
+            { t('appName') }
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -85,7 +89,7 @@ function AppHeader() {
             >
               {menuItems.map((item) => (
                 <MenuItem key={item.displayName} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{item.displayName}</Typography>
+                  <Typography textAlign="center"> { t(item.displayName) } </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -108,7 +112,7 @@ function AppHeader() {
               textDecoration: 'none',
             }}
           >
-            מערכת
+            { t('appName') }
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -118,7 +122,7 @@ function AppHeader() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {item.displayName}
+                {t(item.displayName)}
               </Button>
             ))}
           </Box>
@@ -129,7 +133,7 @@ function AppHeader() {
               <Box sx={{ p: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }} color="inherit">
                 <AccountCircleIcon/>
                 <Typography >
-                  שם משתמש
+                  { t('userName') }
                 </Typography>
               </Box>
             {/* </Tooltip> */}

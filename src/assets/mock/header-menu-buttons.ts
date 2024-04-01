@@ -5,41 +5,41 @@ export interface menuButton {
 
 export const headerMenuBtns: menuButton[] = [
     {
-        displayName: 'כפתורי 0', 
+        displayName: 'menuButton.first', 
         subMenu: [
             {
-                displayName: 'תת-כפתור', 
+                displayName: 'subMenuButton.first.a', 
                 subMenu: undefined
             },
             {
-                displayName: '01-תת-כפתור', 
+                displayName: 'subMenuButton.first.b', 
                 subMenu: undefined
             },
         ]
     },
     {
-        displayName: 'כפתור 1', 
+        displayName: 'menuButton.second', 
         subMenu: undefined
     },
     {
-        displayName: 'כפתורי 2', 
+        displayName: 'menuButton.third', 
         subMenu: [
             {
-                displayName: 'תת-כפתור 02', 
+                displayName: 'subMenuButton.second.a', 
                 subMenu: undefined
             },
         ]
     },
     {
-        displayName: 'כפתורי 3', 
+        displayName: 'menuButton.fourth', 
         subMenu: undefined
     },
     {
-        displayName: 'כפתור 4', 
+        displayName: 'menuButton.fifth', 
         subMenu: undefined
     },
     {
-        displayName: 'כפתור 5', 
+        displayName: 'menuButton.sixth', 
         subMenu: undefined
     },
 ];

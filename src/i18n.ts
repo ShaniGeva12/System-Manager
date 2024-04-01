@@ -1,38 +1,26 @@
 import i18n from "i18next";
-// import Backend from "i18next-http-backend";
+import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
-import HTTPApi from "i18next-http-backend";
+// import HTTPApi from "i18next-http-backend";
+
+const localhostUrl = 'http://localhost:5173';
+const prodUrl = 'https://multi-lang-app-react.netlify.app'; // TODO: Change this to your own prod url
+const getCurrentHost = import.meta.env.MODE === 'development' ?  localhostUrl : prodUrl;
 
 i18n
-    // .use(Backend)
+    .use(Backend)
     .use(initReactI18next)
-    .use(HTTPApi)
+    // .use(HTTPApi)
     .init({
-        // backend: {
-        //     // translation file path
-        //     loadPath: "/assets/i18n/{{ns}}/{{lng}}.json",
-        // },
-        // resources: {
-        //     en: {
-        //       translation: {
-        //         "Welcome to React": "Welcome to React and react-i18next"
-        //       }
-        //     }
-        //   },
-        // lng: "en", // if you're using a language detector, do not define the lng option
-        fallbackLng: "en",
+        backend: {
+            // translation file path
+            loadPath: `${getCurrentHost}/locals/{{lng}}/translations.json`,
+        },
+        lng: "he",
+        fallbackLng: "he",
     
         interpolation: {
             escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
         }
-
-    //------------------------------------------------    
-    //   fallbackLng: "en",
-    //   interpolation: {
-    //    espaceValue: false,
-    //   },
-    //   react: {
-    //    wait: true,
-    //   },
  });
 export default i18n;
