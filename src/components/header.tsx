@@ -20,6 +20,8 @@ import DevStateToggle from './devStateToggle';
 import { headerMenuBtns } from '../assets/mock/header-menu-buttons';
 
 import { useTranslation } from 'react-i18next';
+import useMuiTheme from '../contexts/theme';
+import { darkTheme } from '../styles/material/theme';
 
 const menuItems = headerMenuBtns;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -27,6 +29,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function AppHeader() {
   const {t} = useTranslation();
 
+  const {themeMode} = useMuiTheme();
+  
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -50,8 +54,8 @@ function AppHeader() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
-          <PublicIcon className={textStyles.appTitle} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography className={textStyles.appTitle} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+          <PublicIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: themeMode === darkTheme? 'var(--text-blue)' : 'black'  }} />
+          <Typography sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: themeMode === darkTheme? 'var(--text-blue)' : 'black'  }}
             variant="h6"
             noWrap
           >
@@ -95,12 +99,15 @@ function AppHeader() {
             </Menu>
           </Box>
 
-          <PublicIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <PublicIcon sx={{ 
+            display: { xs: 'flex', md: 'none' }, 
+            mr: 1, 
+            color: themeMode === darkTheme? 'var(--text-blue)' : 'black' 
+          }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -108,8 +115,8 @@ function AppHeader() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
               textDecoration: 'none',
+              color: themeMode === darkTheme? 'var(--text-blue)' : 'black',
             }}
           >
             { t('appName') }

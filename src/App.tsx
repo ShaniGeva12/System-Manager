@@ -12,6 +12,7 @@ function App() {
   
   const [themeMode, setThemeMode] = useState(lightTheme);
   const [language, setLanguage] = useState(LanguageOptions.Hebrew);
+  // const [dir, setDir] = useState();
 
   const toggleTheme = () => {
     const isLight = themeMode === lightTheme;
