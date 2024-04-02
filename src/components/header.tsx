@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import PublicIcon from '@mui/icons-material/Public';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import textStyles from '../styles/text.module.scss'; 
+// import textStyles from '../styles/text.module.scss'; 
 import headerStyles from '../styles/header.module.scss';
 import DevStateToggle from './devStateToggle';
 import { headerMenuBtns } from '../assets/mock/header-menu-buttons';
@@ -127,7 +127,7 @@ function AppHeader() {
               <Button
                 key={item.displayName}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none' }}
               >
                 {t(item.displayName)}
               </Button>

@@ -5,12 +5,12 @@ import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
 import { IconButton } from '@mui/material';
 import useMuiTheme from '../contexts/theme';
 import { lightTheme, darkTheme } from '../styles/material/theme';
-import useLanguageContext, { LanguageOptions } from '../contexts/language';
+import useLanguageContext, { LanguageOptions, ltrDir, rtlDir } from '../contexts/language';
 
 function DevStateToggle() {
 
     const {themeMode, toggleTheme} = useMuiTheme();
-    const {language, changeLanguage} = useLanguageContext();
+    const {language, changeLanguage, changeDirection} = useLanguageContext();
 
     const handleThemeChange = (_event: React.MouseEvent<HTMLElement>) => {
         const isLight = themeMode === lightTheme;
@@ -19,7 +19,10 @@ function DevStateToggle() {
 
     const handleLanguageChange = (_event: React.MouseEvent<HTMLElement>) => {
         const isHebrew = language === LanguageOptions.Hebrew;
-        changeLanguage(isHebrew? LanguageOptions.English : LanguageOptions.Hebrew);
+        const newLanguage = isHebrew ? LanguageOptions.English : LanguageOptions.Hebrew;
+        const newDir = newLanguage === LanguageOptions.Hebrew ? rtlDir : ltrDir;
+        changeLanguage(newLanguage);
+        changeDirection(newDir);
     };
 
 
