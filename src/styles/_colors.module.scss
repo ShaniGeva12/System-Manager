@@ -35,6 +35,7 @@
     --scroll-bottom: #56575c;
     --scroll-hover: #7c7c7c;
 
+    --resize-light-border: rgba(255, 255, 255, 0.4);
   }
 
   $background-hp-fill: var(--background-hp-fill);
@@ -71,5 +72,7 @@
   $scroll-standart: var(--scroll-standart);
   $scroll-bottom: var(--scroll-bottom);
   $scroll-hover: var(--scroll-hover);
+
+  $resize-light-border: var(--resize-light-border);
 
   // $x: var(--x);

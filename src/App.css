@@ -1,5 +1,6 @@
-@import url('/node_modules/react-grid-layout/css/styles.css');
-@import url('/node_modules/react-resizable/css/styles.css');
+/* @import url('/node_modules/react-grid-layout/css/styles.css');
+@import url('/node_modules/react-resizable/css/styles.css'); */
+@import url('./styles/global/grid-layout.scss');
 
 #root {
   display: flex;

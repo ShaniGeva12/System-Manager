@@ -47,6 +47,11 @@ function App() {
     document.dir = direction;
   }, [direction]);
 
+  useEffect(() => {
+    document.body.classList.remove(themeMode === darkTheme? 'lightTheme' : 'darkTheme');
+    document.body.classList.add(themeMode === darkTheme? 'darkTheme' : 'lightTheme');
+  }, [themeMode]);
+
   return (
     <>
       <Suspense fallback='Loading...'>
