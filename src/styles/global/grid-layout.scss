@@ -1,5 +1,9 @@
 @import '../colors.module';
 
+.react-grid-layout {
+    direction: ltr !important; // keep layout same even with language and direction change
+}
+
 .darkTheme {
 
     .react-grid-item > .react-resizable-handle::after {
