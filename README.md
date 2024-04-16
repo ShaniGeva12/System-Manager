@@ -1,3 +1,7 @@
+# Example System Manager App
+![Design Example](src/assets/example/layout_example.jpg)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
