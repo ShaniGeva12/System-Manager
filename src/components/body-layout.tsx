@@ -15,7 +15,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 
-export interface winIfc {
+export interface winData {
     id: number,
     title: string,
     positionX: number,
@@ -24,7 +24,7 @@ export interface winIfc {
     height: number;
 }
 
-const allWins: winIfc[] = [
+const allWins: winData[] = [
     { id: 1, title: "win 1", positionX: 0, positionY: 0, width: 1, height: 2 },
     { id: 2, title: "win 2", positionX: 1, positionY: 0, width: 3, height: 2 },
     { id: 3, title: "win 3", positionX: 4, positionY: 0, width: 1, height: 2 }
