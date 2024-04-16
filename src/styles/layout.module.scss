@@ -2,11 +2,20 @@
 
 .item {
     border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &.dark {
         border: 1px solid $text-light-grey;
+    }
+
+    .header {
+        display: flex;
+        justify-content: end;
+    }
+
+    .content {
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

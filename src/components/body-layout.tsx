@@ -52,6 +52,12 @@ function BodyLayout() {
     const { themeMode } = useMuiTheme();
 
 
+    const onRemoveItem = (i: number) => {
+        console.log("removing", i);
+      //  this.setState({ items: _.reject(this.state.items, { i: i }) });
+      }
+
+
     return (
         <>
             <Button
@@ -76,10 +82,15 @@ function BodyLayout() {
                 {wins.map((win) => {
                     return (
 
-                        <div className={style.item + (themeMode === darkTheme ? ' ' + style.dark : '')} key={win.id}> {win.title}
-                            <IconButton aria-label="delete" size="small">
-                                <DeleteIcon fontSize="inherit" />
-                            </IconButton >
+                        <div className={style.item + (themeMode === darkTheme ? ' ' + style.dark : '')} key={win.id}>
+                            <div className={style.header}>
+                                <IconButton aria-label="delete" size="small" onClick={(e) => alert('ddd')}  >
+                                    <DeleteIcon fontSize="inherit"  />
+                                </IconButton >
+                            </div>
+                            <div className={style.content}>
+                                {win.title}
+                            </div>
                         </div>
 
                     );
