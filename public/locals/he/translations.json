@@ -9,5 +9,6 @@
     "menuButton.sixth": "כפתור 6",
     "subMenuButton.first.a": "תת-כפתור 1",
     "subMenuButton.first.b": "תת-כפתור 2",
-    "subMenuButton.second.a": "תת-כפתור 01"
+    "subMenuButton.second.a": "תת-כפתור 01",
+    "openPopover": "פתיחת חלונית"
 }

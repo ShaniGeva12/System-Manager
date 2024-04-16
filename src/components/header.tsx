@@ -49,6 +49,11 @@ function AppHeader() {
     setAnchorElUser(null);
   };
 
+  const handleOpenPopover = () => {
+    console.log('Open your popover component on this click');
+    handleCloseNavMenu();
+  };
+
   return (
     <AppBar position="static" className={headerStyles.header}>
       <Container maxWidth="xl">
@@ -91,6 +96,9 @@ function AppHeader() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              <MenuItem onClick={handleOpenPopover}>
+                  <Typography textAlign="center"> { t('openPopover') } </Typography>
+              </MenuItem>
               {menuItems.map((item) => (
                 <MenuItem key={item.displayName} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"> { t(item.displayName) } </Typography>
@@ -123,6 +131,12 @@ function AppHeader() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Button
+                onClick={handleOpenPopover}
+                sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none' }}
+              >
+                {t('openPopover')}
+              </Button>
             {menuItems.map((item) => (
               <Button
                 key={item.displayName}

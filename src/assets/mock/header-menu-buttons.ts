@@ -1,6 +1,7 @@
 export interface menuButton {
     displayName: string, 
-    subMenu?: menuButton[]
+    subMenu?: menuButton[],
+    action?: ()=> unknown,
 }
 
 export const headerMenuBtns: menuButton[] = [
@@ -36,10 +37,6 @@ export const headerMenuBtns: menuButton[] = [
     },
     {
         displayName: 'menuButton.fifth', 
-        subMenu: undefined
-    },
-    {
-        displayName: 'menuButton.sixth', 
         subMenu: undefined
     },
 ];

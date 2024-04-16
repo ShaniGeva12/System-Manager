@@ -9,5 +9,6 @@
     "menuButton.sixth": "button 6",
     "subMenuButton.first.a": "sub-button 1",
     "subMenuButton.first.b": "sub-button 2",
-    "subMenuButton.second.a": "sub-button 01"
+    "subMenuButton.second.a": "sub-button 01",
+    "openPopover": "open Popover"
 }
